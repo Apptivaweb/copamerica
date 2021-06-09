@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="">LOGOTIPO</a></div>
+        <div class="menu" id="menu">
+            <a href="">Link</a>
+            <a href="">Link</a>
+            <a href="">Link</a>
+        </div>
+        <div class="hamburguesa"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg></span></div>
+    </nav>
+    <style>
+        :root{
+            --text-link: yellowgreen
+        }
+        body{margin: 0;}
+        nav{
+            display: grid;
+            grid-template-columns: auto 3fr auto;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: green;
+        }
+        .logo a{ color: var(--text-link); font-size: 25px; text-decoration: none;}
+        .menu{text-align: center;}
+        .menu a{ padding: 0 20px; color:  var(--text-link); text-decoration: none;}
+        .hamburguesa { text-align: right; color: var(--text-link);}
+        @media screen and (max-width:768px) {
+            nav{}
+            .logo{ order: 1;  }
+            .menu{ order: 3; width: 100%; display: flex; flex-direction: column; position: fixed;
+    justify-content: start; top: 50px; left: 0; height: 100vh; transform: translate(-100%); color: wheat; background: green; }
+            .hamburguesa{ order: 2;  }
+        }
+    </style>
+    <script>
+    let menu = document.getElementById("menu")
+    document.querySelector(".hamburguesa").addEventListener("click",e=>{
+        menu.style.transform = "translate(0%)"
+    })
+    </script>
+    
+</body>
+</html>
